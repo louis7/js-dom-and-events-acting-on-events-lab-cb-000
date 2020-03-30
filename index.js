@@ -22,6 +22,6 @@ function addNewLiOnClick(){
 
 function clearEmployeeListOnLinkClick(){
     document.querySelector('a').addEventListener('click', function(event){
-    remove()
+    $('.employee-list').remove()
     })
 }
