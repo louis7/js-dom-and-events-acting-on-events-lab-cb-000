@@ -14,9 +14,3 @@ function addNewElementAsLi(){
 let list = retrieveEmployeeInformation()
 $('.employee-list').append(`<li>${list}</li>`)
 }
-
-function addNewLiOnClick(){
-    document.querySelector('form').addEventListener('submit', function(event){
-    addNewElementAsLi()
-    })
-}
