@@ -20,8 +20,15 @@ function addNewLiOnClick(){
     })
 }
 
+
 function clearEmployeeListOnLinkClick(){
-    document.querySelector('a').addEventListener('click', function(event){
-    $('.employee-list').remove()
-    })
+  let link = document.querySelector('a')
+  let ul = document.querySelector('ul')
+  link.addEventListener('click', function(event){
+    ul.innerHTML = ''
+  })
+}
+
+function resetInput(){
+  document.querySelector('input').value = ''
 }
