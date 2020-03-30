@@ -10,3 +10,8 @@ function retrieveEmployeeInformation(){
    let info = $('.employeeform').find('input[name="name"]').val()
    return info
 }
+
+function addNewElementAsLi(){
+let list = retrieveEmployeeInformation()
+$('.employee-list').append('<li>${list}</li>')
+}
