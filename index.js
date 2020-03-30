@@ -6,21 +6,25 @@ function preventRefreshOnSubmit(){
 
 preventRefreshOnSubmit()
 
+let input = document.querySelector('input')
+
 function retrieveEmployeeInformation(){
-   let info = $('.employeeform').find('input[name="name"]').val()
-   return info
-}
-function addNewElementAsLi(){
-let list = retrieveEmployeeInformation()
-$('.employee-list').append(`<li>${list}</li>`)
-}
-function addNewLiOnClick(){
-    document.querySelector('form').addEventListener('submit', function(event){
-    addNewElementAsLi()
-    resetInput()
-    })
+  return input.value
 }
 
+function addNewElementAsLi(){
+  let employeeName = retrieveEmployeeInformation()
+  document.querySelector('.employee-list').insertAdjacentHTML('beforeend', `<li>${employeeName}</li>`)
+}
+
+
+function addNewLiOnClick(){
+  let submit = document.querySelector('input[type="submit"]')
+  submit.addEventListener('click', function(event){
+    addNewElementAsLi()
+    resetInput()
+  })
+}
 
 function clearEmployeeListOnLinkClick(){
   let link = document.querySelector('a')
